@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Computadoras</title>
+  <link rel="stylesheet" href="ola2.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tienda de Computadoras</h1>
+    <div class="carrito-icono">
+      🛒 <span id="contador-carrito">0</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#" class="nav-link" data-seccion="inicio">Inicio</a>
+    <a href="#" class="nav-link" data-seccion="productos">Productos</a>
+    <a href="#" class="nav-link" data-seccion="ofertas">Ofertas</a>
+    <a href="#" class="nav-link" data-seccion="carrito">Carrito</a>
+    <a href="#" class="nav-link" data-seccion="contacto">Contacto</a>
+  </nav>
+
+  <div class="buscador-container">
+    <input type="text" id="buscador" placeholder="Buscar productos...">
+    <button id="btn-buscar">🔍</button>
+  </div>
+
+  <div id="carrito-modal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h2>Tu Carrito</h2>
+      <div id="productos-carrito"></div>
+      <div class="total-carrito">
+        <p>Total: $<span id="total-precio">0</span></p>
+        <button id="comprar-todo">Comprar Todo</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="productos">
+    <div class="producto">
+      <img src="imagenes/hp_victus_15-fb0028nr_-_2_1200x1200.webp" alt="Laptop Gamer">
+      <h3>Laptop Gamer</h3>
+      <p>Intel i7, 16GB RAM, RTX 3060</p>
+      <p class="precio">$1,299.99</p>
+      <button data-precio="1299.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/Case-Game_low_2023.jpg" alt="PC de Escritorio">
+      <h3>PC de Escritorio</h3>
+      <p>AMD Ryzen 5, 16GB RAM, SSD 512GB</p>
+      <p class="precio">$899.99</p>
+      <button data-precio="899.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/61pbnNbjNNL.jpg" alt="Mini Laptop">
+      <h3>Mini Laptop</h3>
+      <p>Intel Celeron, 4GB RAM, SSD 128GB</p>
+      <p class="precio">$399.99</p>
+      <button data-precio="399.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/MacBook-Pro-A2780-7101.webp" alt="MacBook Pro">
+      <h3>MacBook Pro</h3>
+      <p>M2 Pro, 16GB RAM, SSD 1TB</p>
+      <p class="precio">$1,999.99</p>
+      <button data-precio="1999.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/815zWuDT6-L._AC_UF894,1000_QL80_.jpg" alt="Alienware">
+      <h3>Alienware Aurora</h3>
+      <p>Intel i9, 32GB RAM, RTX 4080</p>
+      <p class="precio">$2,499.99</p>
+      <button data-precio="2499.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/V0F3_1_201911032076718060.jpg" alt="Surface Pro">
+      <h3>Laptop Surface Pro 9</h3>
+      <p>Intel i7, 16GB RAM, SSD 512GB</p>
+      <p class="precio">$1,299.99</p>
+      <button data-precio="1299.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/34-235-522-V27.jpg" alt="Lenovo ThinkPad">
+      <h3>Laptop Lenovo ThinkPad X1</h3>
+      <p>Intel i7, 16GB RAM, SSD 1TB</p>
+      <p class="precio">$1,199.99</p>
+      <button data-precio="1599.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/81hH5vK-MCL.jpg" alt="ASUS ROG">
+      <h3>ASUS ROG Strix G15</h3>
+      <p>AMD Ryzen 9, 32GB RAM, RTX 3070</p>
+      <p class="precio">$1,799.99</p>
+      <button data-precio="1799.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/LD0006052966_0006052995_1024x1024.webp" alt="Acer Nitro 5">
+      <h3>Acer Nitro 5</h3>
+      <p>Intel i5, 16GB RAM, RTX 3050</p>
+      <p class="precio">$899.99</p>
+      <button data-precio="899.99">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="imagenes/MSIKATANA.webp" alt="MSI Gaming">
+      <h3>MSI Gaming Laptop</h3>
+      <p>Intel i7, 16GB RAM, RTX 3060</p>
+      <p class="precio">$1,499.99</p>
+      <button data-precio="1499.99">Comprar</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Autor: Jean Andrade</p>
+    <p>© 2025 Tienda de Computadoras. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .producto {
+    background-color: white;
+    padding: 40px;
+    border-radius: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+  }
+  
+  .producto h3 {
+    margin: 10px 0;
+  }
+  
+  .producto p {
+    color: #555;
+  }
+  
+  .producto button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .producto button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* Estilos para el carrito */
+  .carrito-icono {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    animation: bounce 1s infinite;
+  }
+  
+  #contador-carrito {
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+    left: -5px;
+  }
+  
+  /* Estilos para el modal del carrito */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+  
+  .modal-contenido {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .cerrar-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para los productos en el carrito */
+  #productos-carrito {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .producto-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .total-carrito {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2em;
+  }
+  
+  #comprar-todo {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para la navegación */
+  .nav-link {
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s;
+    overflow: hidden;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .nav-link:hover::before {
+    left: 100%;
+  }
+  
+  /* Estilos para los precios */
+  .precio {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .precio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #28a745;
+    transition: left 0.3s ease;
+  }
+  
+  .producto:hover .precio::after {
+    left: 0;
+  }
+  
+  /* Estilos para el buscador */
+  .buscador-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+  }
+  
+  #buscador {
+    width: 50%;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  #buscador:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+  }
+  
+  #btn-buscar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-left: -50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  #btn-buscar:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+  }
+  
+  .producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .producto img:hover {
+    transform: scale(1.1) rotate(2deg);
+  }
+  
